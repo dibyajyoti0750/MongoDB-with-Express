@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat Messages</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Chat Messages</h2>
+      <% for (let chat of chats) { %>
+      <div class="chat">
+        <div class="chat-header">
+          <p class="sender">
+            <span><i class="fa-solid fa-user"></i> <%= chat.from %></span>
+          </p>
+          <p class="receiver">To: <span><%= chat.to %></span></p>
+          <p class="timestamp">
+            <i class="fa-solid fa-calendar"></i> <%=
+            chat.created_at.toString().split(" ").slice(0, 4).join(" ") %>
+            &nbsp; | &nbsp;
+            <i class="fa-solid fa-clock"></i>
+            <%= chat.created_at.toString().split(" ")[4] %>
+          </p>
+        </div>
+        <div class="chat-message">
+          <p><%= chat.msg %></p>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </body>
+</html>
