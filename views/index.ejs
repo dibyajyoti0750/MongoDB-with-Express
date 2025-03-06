@@ -20,15 +20,16 @@
       <div class="chat">
         <div class="chat-header">
           <p class="sender">
-            <span><i class="fa-solid fa-user"></i> <%= chat.from %></span>
+            <span
+              ><i class="fa-solid fa-user"></i> &nbsp; <%= chat.from %></span
+            >
           </p>
-          <p class="receiver">To: <span><%= chat.to %></span></p>
+          <p class="receiver">To:&nbsp;<span><%= chat.to %></span></p>
           <p class="timestamp">
-            <i class="fa-solid fa-calendar"></i> <%=
+            <i class="fa-solid fa-calendar"></i> &nbsp; <%=
             chat.created_at.toString().split(" ").slice(0, 4).join(" ") %>
-            &nbsp; | &nbsp;
-            <i class="fa-solid fa-clock"></i>
-            <%= chat.created_at.toString().split(" ")[4] %>
+            &nbsp; | &nbsp; <i class="fa-solid fa-clock"></i> &nbsp; <%=
+            chat.created_at.toString().split(" ")[4] %>
           </p>
         </div>
         <div class="chat-message">
