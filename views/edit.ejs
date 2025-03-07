@@ -1,38 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edit Chat Message</title>
-    <link rel="stylesheet" href="/edit.css" />
-  </head>
-  <body>
-    <div class="edit-container">
-      <h3 class="edit-title">
-        Edit Message: <span class="chat-id"><%= chat._id %></span>
-      </h3>
-      <div class="chat-metadata">
-        <p class="metadata-item">
-          From: <span class="user-tag"><%= chat.from %></span>
-        </p>
-        <p class="metadata-item">
-          To: <span class="user-tag"><%= chat.to %></span>
-        </p>
-      </div>
-      <form
-        method="post"
-        action="/chats/<%= chat._id %>?_method=PUT"
-        class="edit-form"
-      >
-        <textarea
-          name="msg"
-          class="message-editor"
-          placeholder="Type your message here..."
-        >
-<%= chat.msg %></textarea
-        >
-        <button type="submit" class="save-button">Update Message</button>
-      </form>
+<%- include("includes/header", {title:"Edit Chat Message",
+stylesheet:"/edit.css"}) %>
+<body>
+  <div class="edit-container">
+    <h3 class="edit-title">
+      Edit Message: <span class="chat-id"><%= chat._id %></span>
+    </h3>
+    <div class="chat-metadata">
+      <p class="metadata-item">
+        From: <span class="user-tag"><%= chat.from %></span>
+      </p>
+      <p class="metadata-item">
+        To: <span class="user-tag"><%= chat.to %></span>
+      </p>
     </div>
-  </body>
-</html>
+    <form
+      method="post"
+      action="/chats/<%= chat._id %>?_method=PUT"
+      class="edit-form"
+    >
+      <textarea
+        name="msg"
+        class="message-editor"
+        placeholder="Type your message here..."
+      >
+<%= chat.msg %></textarea
+      >
+      <button type="submit" class="save-button">Update Message</button>
+    </form>
+  </div>
+</body>
