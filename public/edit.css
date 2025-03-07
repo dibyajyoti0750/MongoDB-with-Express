@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.edit-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px;
+}
+
+.edit-title {
+  color: #2d3436;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.chat-id {
+  color: #007bff;
+  font-weight: 600;
+}
+
+.chat-metadata {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.metadata-item {
+  color: #495057;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.user-tag {
+  background: #e9ecef;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-weight: 500;
+  color: #212529;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.message-editor {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.5;
+  min-height: 180px;
+  resize: vertical;
+  transition: all 0.3s ease;
+}
+
+.message-editor:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.save-button {
+  background: #007bff;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.save-button:hover {
+  background: #0056b3;
+}
+
+.save-button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+  .edit-container {
+    padding: 1.5rem;
+    margin: 10px;
+  }
+
+  .edit-title {
+    font-size: 1.5rem;
+  }
+
+  .message-editor {
+    min-height: 150px;
+  }
+}
