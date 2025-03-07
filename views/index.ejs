@@ -35,15 +35,34 @@ stylesheet:"/styles.css"}) %>
         <p><%= chat.msg %></p>
       </div>
       <br />
-      <form action="/chats/<%= chat._id %>/edit" method="get">
-        <button class="btn btn-primary">Edit</button>
-      </form>
+      <div class="d-flex">
+        <form action="/chats/<%= chat._id %>/edit" method="get">
+          <button class="btn btn-primary">Edit</button>
+        </form>
+        <form
+          class="delete-form"
+          method="post"
+          action="/chats/<%= chat._id %>?_method=DELETE"
+        >
+          <button class="btn btn-danger">Delete</button>
+        </form>
+      </div>
     </div>
     <% } %>
   </div>
+
+  <dialog id="confirm-dialog">
+    <p>Are you sure you want to delete this chat?</p>
+    <div class="modal-buttons">
+      <button class="confirm" id="confirm-delete">Yes, Delete</button>
+      <button class="cancel" id="cancel-delete">Cancel</button>
+    </div>
+  </dialog>
+
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"
   ></script>
+  <script src="/app.js"></script>
 </body>

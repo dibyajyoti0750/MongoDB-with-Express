@@ -69,3 +69,41 @@ h2 {
 .chat-message p {
   margin: 0;
 }
+
+dialog {
+  border: none;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  width: 300px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-buttons {
+  margin-top: 10px;
+}
+
+button {
+  padding: 8px 12px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirm {
+  background-color: red;
+  color: white;
+}
+
+.cancel {
+  background-color: gray;
+  color: white;
+}
