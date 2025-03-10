@@ -46,6 +46,9 @@ stylesheet:"/styles.css"}) %>
         >
           <button class="btn btn-danger">Delete</button>
         </form>
+        <form action="/chats/<%= chat._id %>" method="get">
+          <Button>Show</Button>
+        </form>
       </div>
     </div>
     <% } %>
